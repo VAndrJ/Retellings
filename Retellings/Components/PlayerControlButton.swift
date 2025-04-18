@@ -23,7 +23,7 @@ struct PlayerControlButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: control.rawValue)
-                .frame(width: 44, height: 44)
+                .frame(same: 44)
         }
         .clipShape(.circle)
         .contentShape(.circle)
