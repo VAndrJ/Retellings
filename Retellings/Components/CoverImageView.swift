@@ -21,8 +21,7 @@ struct CoverImageView: View {
                     .resizable()
                     .scaledToFill()
             } else {
-                ProgressView()
-                    .progressViewStyle(.circular)
+                LargeProgressView()
             }
         }
     }
