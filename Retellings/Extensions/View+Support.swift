@@ -20,4 +20,9 @@ extension View {
             alignment: alignment
         )
     }
+
+    @inlinable
+    nonisolated public func clampingDynamicTypeSize() -> some View {
+        dynamicTypeSize(.medium ... .xxxLarge)
+    }
 }

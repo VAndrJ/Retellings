@@ -28,6 +28,7 @@ struct PlayerControlButton: View {
         .clipShape(.circle)
         .contentShape(.circle)
         .buttonStyle(.playback)
+        .clampingDynamicTypeSize()
     }
 }
 
