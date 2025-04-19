@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Retellings
+
+  Created by VAndrJ on 4/19/25.
+  
+*/
+
+// I prefer camelCase keys, but here are the same keys style as in the example:
+"key.point.value" = "KEY POINT %1$d OF %2$d";

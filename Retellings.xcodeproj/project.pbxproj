@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A31AB93B2DB37E1F00650867 /* RswiftLibrary */; };
 		A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5502DB2D351005F7E3E /* TCAComposer */; };
 		A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5992DB2E23B005F7E3E /* SnapshotTesting */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */,
+				A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +153,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A31AB93E2DB37E3400650867 /* PBXTargetDependency */,
 				A35DC57F2DB2D48E005F7E3E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -159,6 +162,7 @@
 			name = Retellings;
 			packageProductDependencies = (
 				A35DC5502DB2D351005F7E3E /* TCAComposer */,
+				A31AB93B2DB37E1F00650867 /* RswiftLibrary */,
 			);
 			productName = Retellings;
 			productReference = A35DC5352DB2D2A6005F7E3E /* Retellings.app */;
@@ -267,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A35DC52C2DB2D2A6005F7E3E;
 			minimizedProjectReferenceProxies = 1;
@@ -274,6 +279,7 @@
 				A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */,
 				A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A35DC5362DB2D2A6005F7E3E /* Products */;
@@ -373,6 +379,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A31AB93E2DB37E3400650867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A31AB93D2DB37E3400650867 /* RswiftGenerateInternalResources */;
+		};
 		A35DC55D2DB2D41C005F7E3E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
@@ -400,6 +410,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -463,6 +474,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -727,6 +739,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
 		A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mentalflux/tca-composer";
@@ -754,6 +774,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A31AB93B2DB37E1F00650867 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		A31AB93D2DB37E3400650867 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
 		A35DC5502DB2D351005F7E3E /* TCAComposer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */;

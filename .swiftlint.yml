@@ -85,6 +85,7 @@ identifier_name:
     - x
     - y
     - z
+    - L
 
 indentation_width:
   indentation_width: 4
