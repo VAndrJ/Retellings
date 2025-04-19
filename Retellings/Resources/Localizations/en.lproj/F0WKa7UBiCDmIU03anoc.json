@@ -1,18 +1,21 @@
-[
-    {
-        "title": "Point 1",
-        "audio": "audio1.mp3"
-    },
-    {
-        "title": "Point 1",
-        "audio": "audio2.mp3"
-    },
-    {
-        "title": "Point 1",
-        "audio": "audio3.mp3"
-    },
-    {
-        "title": "Point 1",
-        "audio": "audio4.mp3"
-    }
-]
+{
+    "url": "https://static.headway-academy.com/courses/art/cover.png",
+    "points": [
+        {
+            "title": "Point 1",
+            "audio": "audio1.mp3"
+        },
+        {
+            "title": "Point 1",
+            "audio": "audio2.mp3"
+        },
+        {
+            "title": "Point 1",
+            "audio": "audio3.mp3"
+        },
+        {
+            "title": "Point 1",
+            "audio": "audio4.mp3"
+        }
+    ]
+}

@@ -7,7 +7,16 @@
 
 import Foundation
 
-struct KeyPoint: Decodable {
+struct KeyPoint: Decodable, Equatable {
     let title: String
     let audio: String
+}
+
+extension KeyPoint {
+    static var test: KeyPoint {
+        .init(
+            title: "title",
+            audio: "audio"
+        )
+    }
 }
