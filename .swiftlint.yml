@@ -4,6 +4,7 @@ excluded:
   - ${PWD}/DerivedData
 
 disabled_rules:
+  - trailing_comma
   - force_unwrapping
   - vertical_whitespace_opening_braces
   - discarded_notification_center_observer
