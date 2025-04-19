@@ -5,13 +5,16 @@
 //  Created by VAndrJ on 4/18/25.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 @main
 struct RetellingsApp: App {
     var body: some Scene {
         WindowGroup {
-            AppView()
+            AppView(store: Store(initialState: AppReducer.State()) {
+                AppReducer()
+            })
         }
     }
 }

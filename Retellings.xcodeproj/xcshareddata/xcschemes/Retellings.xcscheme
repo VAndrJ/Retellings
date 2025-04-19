@@ -68,6 +68,17 @@
                ReferencedContainer = "container:Retellings.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A31ABAD52DB38DE200650867"
+               BuildableName = "TestRetellingsTests.xctest"
+               BlueprintName = "TestRetellingsTests"
+               ReferencedContainer = "container:Retellings.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

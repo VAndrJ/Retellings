@@ -10,6 +10,7 @@
 		A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A31AB93B2DB37E1F00650867 /* RswiftLibrary */; };
 		A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5502DB2D351005F7E3E /* TCAComposer */; };
 		A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5992DB2E23B005F7E3E /* SnapshotTesting */; };
+		A3DB6DE32DB3907500002A05 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A3DB6DE22DB3907500002A05 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 			files = (
 				A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */,
 				A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */,
+				A3DB6DE32DB3907500002A05 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +117,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31ABA2A2DB38C0800650867 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A35DC52C2DB2D2A6005F7E3E = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +132,7 @@
 				A35DC5592DB2D41C005F7E3E /* RetellingsTests */,
 				A35DC5672DB2D443005F7E3E /* RetellingsSnapshotTests */,
 				A35DC5742DB2D452005F7E3E /* RetellingsUITests */,
+				A31ABA2A2DB38C0800650867 /* Frameworks */,
 				A35DC5362DB2D2A6005F7E3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 			packageProductDependencies = (
 				A35DC5502DB2D351005F7E3E /* TCAComposer */,
 				A31AB93B2DB37E1F00650867 /* RswiftLibrary */,
+				A3DB6DE22DB3907500002A05 /* ComposableArchitecture */,
 			);
 			productName = Retellings;
 			productReference = A35DC5352DB2D2A6005F7E3E /* Retellings.app */;
@@ -280,6 +291,7 @@
 				A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */,
+				A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A35DC5362DB2D2A6005F7E3E /* Products */;
@@ -599,7 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
 			};
@@ -616,7 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
 			};
@@ -771,6 +783,14 @@
 				minimumVersion = 1.18.3;
 			};
 		};
+		A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -798,6 +818,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		A3DB6DE22DB3907500002A05 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
