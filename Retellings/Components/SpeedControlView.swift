@@ -59,6 +59,7 @@ struct SpeedControlView: View {
                         .monospaced()
                         .animation(.linear(duration: 0.1), value: speed)
                 }
+                .dynamicFont(.inter, size: 14, weight: .bold)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
                 .frame(minHeight: 44)
