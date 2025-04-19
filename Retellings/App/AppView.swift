@@ -1,24 +1,25 @@
 //
-//  ContentView.swift
+//  AppView.swift
 //  Retellings
 //
-//  Created by VAndrJ on 4/18/25.
+//  Created by VAndrJ on 4/19/25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct AppView: View {
     var body: some View {
-        VStack {
+        TabView {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+                .tag(RetellingTab.listening)
             Text("Hello, world!")
+                .tag(RetellingTab.overview)
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    AppView()
 }
