@@ -17,11 +17,19 @@ struct AppView: View {
             Button("overview") {
                 send(.select(tab: .overview))
             }
+            .toolbar(.hidden, for: .tabBar)
             .tag(RetellingTab.listening)
             Button("listening") {
                 send(.select(tab: .listening))
             }
+            .toolbar(.hidden, for: .tabBar)
             .tag(RetellingTab.overview)
+        }
+        .safeAreaInset(edge: .bottom) {
+            CustomTabBar(
+                tabs: RetellingTab.allCases,
+                selection: $store.tab
+            )
         }
     }
 }
