@@ -12,9 +12,16 @@ import SwiftUI
 struct RetellingsApp: App {
     var body: some Scene {
         WindowGroup {
-            AppView(store: Store(initialState: AppReducer.State()) {
-                AppReducer()
-            })
+            AppView(
+                store: Store(
+                    initialState: AppReducer.State(
+                        listeningSummary: .init(),
+                        readingSummary: .init()
+                    )
+                ) {
+                    AppReducer()
+                }
+            )
         }
     }
 }

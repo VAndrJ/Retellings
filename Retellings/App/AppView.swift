@@ -13,30 +13,52 @@ struct AppView: View {
     @Bindable var store: StoreOf<AppReducer>
 
     var body: some View {
-        TabView(selection: $store.state.tab) {
-            Button("overview") {
-                send(.select(tab: .overview))
+        switch store.state.status {
+        case .idle:
+            LargeProgressView()
+                .onAppear {
+                    send(.onAppear)
+                }
+        case .loading:
+            LargeProgressView()
+        case let .loadingFailed(error):
+            VStack {
+                Text("Loading failed: \(error.localizedDescription)")
+                Button("Try again") {
+                    send(.tryAgain)
+                }
             }
-            .toolbar(.hidden, for: .tabBar)
-            .tag(RetellingTab.listening)
-            Button("listening") {
-                send(.select(tab: .listening))
+        case .data:
+            TabView(selection: $store.state.tab) {
+                ListeningView(store: store.scopes.listeningSummary)
+                    .toolbar(.hidden, for: .tabBar)
+                    .tag(RetellingTab.listening)
+
+                ReadingView(store: store.scopes.readingSummary)
+                    .toolbar(.hidden, for: .tabBar)
+                    .tag(RetellingTab.overview)
             }
-            .toolbar(.hidden, for: .tabBar)
-            .tag(RetellingTab.overview)
-        }
-        .safeAreaInset(edge: .bottom) {
-            CustomTabBar(
-                tabs: RetellingTab.allCases,
-                selection: $store.tab
-            )
+            .safeAreaInset(edge: .bottom) {
+                CustomTabBar(
+                    tabs: RetellingTab.allCases,
+                    selection: $store.tab
+                )
+            }
+            .onAppear {
+                send(.onAppear)
+            }
         }
     }
 }
 
 #Preview {
     AppView(
-        store: Store(initialState: AppReducer.State()) {
+        store: Store(
+            initialState: AppReducer.State(
+                listeningSummary: .init(),
+                readingSummary: .init()
+            )
+        ) {
             AppReducer()
         }
     )
