@@ -21,6 +21,7 @@ struct ReadingView: View {
                 Text(text)
                     .dynamicFont(.inter, size: 17)
                     .clampingDynamicTypeSize()
+                    .padding()
             }
         }
     }
