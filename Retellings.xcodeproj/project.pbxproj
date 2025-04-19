@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5502DB2D351005F7E3E /* TCAComposer */; };
+		A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5992DB2E23B005F7E3E /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		A35DC5582DB2D41C005F7E3E /* RetellingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35DC5662DB2D443005F7E3E /* RetellingsSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35DC5732DB2D452005F7E3E /* RetellingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35DC5BB2DB2E4DB005F7E3E /* Retellings.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Retellings.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,7 @@
 		A35DC52C2DB2D2A6005F7E3E = {
 			isa = PBXGroup;
 			children = (
+				A35DC5BB2DB2E4DB005F7E3E /* Retellings.xctestplan */,
 				A35DC5372DB2D2A6005F7E3E /* Retellings */,
 				A35DC5592DB2D41C005F7E3E /* RetellingsTests */,
 				A35DC5672DB2D443005F7E3E /* RetellingsSnapshotTests */,
@@ -188,6 +192,7 @@
 			);
 			name = RetellingsSnapshotTests;
 			packageProductDependencies = (
+				A35DC5992DB2E23B005F7E3E /* SnapshotTesting */,
 			);
 			productName = RetellingsSnapshotTests;
 			productReference = A35DC5662DB2D443005F7E3E /* RetellingsSnapshotTests.xctest */;
@@ -255,6 +260,7 @@
 			packageReferences = (
 				A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */,
 				A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A35DC5362DB2D2A6005F7E3E /* Products */;
@@ -722,6 +728,14 @@
 				minimumVersion = 0.59.1;
 			};
 		};
+		A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -734,6 +748,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		A35DC5992DB2E23B005F7E3E /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

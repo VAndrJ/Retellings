@@ -1,0 +1,44 @@
+{
+  "configurations" : [
+    {
+      "id" : "5C400AAA-C46D-49F8-A307-C66C1B5F4E4D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Retellings.xcodeproj",
+      "identifier" : "A35DC5342DB2D2A6005F7E3E",
+      "name" : "Retellings"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Retellings.xcodeproj",
+        "identifier" : "A35DC5572DB2D41C005F7E3E",
+        "name" : "RetellingsTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:Retellings.xcodeproj",
+        "identifier" : "A35DC5652DB2D443005F7E3E",
+        "name" : "RetellingsSnapshotTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Retellings.xcodeproj",
+        "identifier" : "A35DC5722DB2D452005F7E3E",
+        "name" : "RetellingsUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
