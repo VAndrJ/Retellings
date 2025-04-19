@@ -25,6 +25,8 @@ struct ListeningReducer {
         var isPlaying = false
         var keyPoint = 0
         var speed: Float = 1.0
+        var currentTime: Double = 0
+        var duration: Double = 0
 
         var currentKeyPoint: Int { min(total, keyPoint + 1) }
         var total: Int { status.data.map(\.points)?.count ?? 0 }
@@ -42,6 +44,7 @@ struct ListeningReducer {
             case playPause
             case tryLoadAgain
             case updateSpeed(Float)
+            case seek(to: Double)
         }
 
         enum Effect: Equatable {
@@ -61,6 +64,10 @@ struct ListeningReducer {
     @ComposeBodyActionCase
     func view(state: inout State, action: Actions.View) -> EffectOf<Self> {
         switch action {
+        case let .seek(toTime):
+            state.currentTime = toTime
+
+            return .none
         case let .updateSpeed(speed):
             print(speed)
             state.speed = speed

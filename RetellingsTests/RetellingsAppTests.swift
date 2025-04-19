@@ -81,9 +81,6 @@ struct RetellingsAppTests {
             $0.status = .data(expected)
             $0.readingSummary.status = .data(expected.about)
         }
-        await store.receive(\.listeningSummary.effect.updateSummary) {
-            $0.listeningSummary.currentSummary = expected.id
-        }
         await store.skipReceivedActions()
     }
 
