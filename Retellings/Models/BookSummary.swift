@@ -7,9 +7,22 @@
 
 import Foundation
 
-struct BookSummary: Decodable {
+struct BookSummary: Decodable, Equatable {
     let id: String
     let title: String
     let description: String
     let about: String
+    let data: String
+}
+
+extension BookSummary {
+    static var test: BookSummary {
+        .init(
+            id: "id",
+            title: "title",
+            description: "description",
+            about: "about",
+            data: "data"
+        )
+    }
 }

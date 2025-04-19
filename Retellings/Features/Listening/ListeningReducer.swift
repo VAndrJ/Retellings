@@ -18,6 +18,7 @@ struct ListeningReducer {
             case loadingFailed(MyAwesomeError)
         }
 
+        var currentSummary: String?
         var status: Status = .idle
     }
 
@@ -27,7 +28,8 @@ struct ListeningReducer {
         }
 
         enum Effect: Equatable {
-            case fetchData
+            case updateSummary(String)
+            case fetchData(String)
         }
     }
 
@@ -42,7 +44,14 @@ struct ListeningReducer {
     @ComposeBodyActionCase
     func effect(state: inout State, action: Actions.Effect) -> EffectOf<Self> {
         switch action {
-        case .fetchData:
+        case let .updateSummary(id):
+            state.currentSummary = id
+
+            return .run { send in
+                await send(.effect(.fetchData(id)))
+            }
+        case let .fetchData(id):
+            // TODO: - implement
             return .none
         }
     }

@@ -13,38 +13,42 @@ struct AppView: View {
     @Bindable var store: StoreOf<AppReducer>
 
     var body: some View {
-        switch store.state.status {
-        case .idle:
-            LargeProgressView()
+        ZStack {
+            switch store.state.status {
+            case .idle:
+                LargeProgressView()
+                    .onAppear {
+                        send(.onAppear)
+                    }
+            case .loading:
+                LargeProgressView()
+            case let .loadingFailed(error):
+                AppErrorView(error: error) {
+                    send(.tryAgain)
+                }
+            case .data:
+                TabView(selection: $store.state.tab) {
+                    ListeningView(store: store.scopes.listeningSummary)
+                        .toolbar(.hidden, for: .tabBar)
+                        .tag(RetellingTab.listening)
+
+                    ReadingView(store: store.scopes.readingSummary)
+                        .toolbar(.hidden, for: .tabBar)
+                        .tag(RetellingTab.overview)
+                }
+                .safeAreaInset(edge: .bottom) {
+                    CustomTabBar(
+                        tabs: RetellingTab.allCases,
+                        selection: $store.tab
+                    )
+                }
                 .onAppear {
                     send(.onAppear)
                 }
-        case .loading:
-            LargeProgressView()
-        case let .loadingFailed(error):
-            AppErrorView(error: error) {
-                send(.tryAgain)
-            }
-        case .data:
-            TabView(selection: $store.state.tab) {
-                ListeningView(store: store.scopes.listeningSummary)
-                    .toolbar(.hidden, for: .tabBar)
-                    .tag(RetellingTab.listening)
-
-                ReadingView(store: store.scopes.readingSummary)
-                    .toolbar(.hidden, for: .tabBar)
-                    .tag(RetellingTab.overview)
-            }
-            .safeAreaInset(edge: .bottom) {
-                CustomTabBar(
-                    tabs: RetellingTab.allCases,
-                    selection: $store.tab
-                )
-            }
-            .onAppear {
-                send(.onAppear)
             }
         }
+        .transition(.opacity)
+        .animation(.easeInOut, value: store.status)
     }
 }
 

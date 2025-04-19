@@ -13,8 +13,13 @@ import ComposableArchitecture
 struct RetellingsAppTests {
 
     @Test("Tab selection changes app state and keeps selection")
-    func tabSelectionChangesAppState() async {
-        let store = await TestStore(initialState: AppReducer.State()) {
+    func tabSelection_ChangesAppState() async {
+        let store = await TestStore(
+            initialState: AppReducer.State(
+                listeningSummary: .init(),
+                readingSummary: .init()
+            )
+        ) {
             AppReducer()
         }
 
@@ -25,4 +30,62 @@ struct RetellingsAppTests {
             $0.tab = .listening
         }
     }
+
+    @Test("Failure status when error occured during data loading")
+    func dataLoad_Failure_ChangesAppState() async {
+        let store = await TestStore(
+            initialState: AppReducer.State(
+                listeningSummary: .init(),
+                readingSummary: .init()
+            )
+        ) {
+            AppReducer()
+        } withDependencies: { dependency in
+            dependency.apiClient = .init(
+                fetchSummary: {
+                    throw APIClient.Failure()
+                },
+                fetchAudiosList: { [] }
+            )
+        }
+
+        await store.send(.effect(.fetchData)) {
+            $0.status = .loading
+        }
+        await store.receive(\.effect.fetchDataResult) {
+            $0.status = .loadingFailed(.summaryLoadingFailed)
+        }
+    }
+
+    @Test("Sucess status when data loaded")
+    func dataLoad_Success_ChangesAppState() async {
+        let expected = BookSummary.test
+        let store = await TestStore(
+            initialState: AppReducer.State(
+                listeningSummary: .init(),
+                readingSummary: .init()
+            )
+        ) {
+            AppReducer()
+        } withDependencies: { dependency in
+            dependency.apiClient = .init(
+                fetchSummary: { expected },
+                fetchAudiosList: { [] }
+            )
+        }
+
+        await store.send(.effect(.fetchData)) {
+            $0.status = .loading
+        }
+        await store.receive(\.effect.fetchDataResult) {
+            $0.status = .data(expected)
+            $0.readingSummary.status = .data(expected.about)
+        }
+        await store.receive(\.listeningSummary.effect.updateSummary) {
+            $0.listeningSummary.currentSummary = expected.id
+        }
+        await store.skipReceivedActions()
+    }
+
+    // TODO: - other scenarios
 }

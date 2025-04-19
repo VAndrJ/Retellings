@@ -21,7 +21,7 @@ struct AppReducer {
         enum Status: Equatable {
             case idle
             case loading
-            case data(String)
+            case data(BookSummary)
             case loadingFailed(MyAwesomeError)
         }
 
@@ -38,7 +38,7 @@ struct AppReducer {
 
         enum Effect: Equatable {
             case fetchData
-            case fetchDataResult(TaskResult<String>)
+            case fetchDataResult(TaskResult<BookSummary>)
         }
     }
 
@@ -89,10 +89,10 @@ struct AppReducer {
             .cancellable(id: CancelToken.loading, cancelInFlight: true)
         case let .fetchDataResult(.success(data)):
             state.status = .data(data)
-            state.readingSummary.status = .data(data)
+            state.readingSummary.status = .data(data.about)
 
             return .run { send in
-                await send(.listeningSummary(.effect(.fetchData)))
+                await send(.listeningSummary(.effect(.updateSummary(data.id))))
             }
         case .fetchDataResult(.failure):
             // TODO: - Error mapping, or direct usage.
