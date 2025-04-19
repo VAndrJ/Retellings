@@ -14,6 +14,7 @@ struct ChapterDescriptionView: View {
         Text(text)
             .multilineTextAlignment(.center)
             .foregroundColor(.primary)
+            .dynamicFont(.inter, size: 16)
             .clampingDynamicTypeSize()
     }
 }

@@ -43,9 +43,22 @@
 		A35DC5BB2DB2E4DB005F7E3E /* Retellings.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Retellings.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A31AB8FD2DB3797600650867 /* Exceptions for "Retellings" folder in "Retellings" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A35DC5372DB2D2A6005F7E3E /* Retellings */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A31AB8FD2DB3797600650867 /* Exceptions for "Retellings" folder in "Retellings" target */,
+			);
 			path = Retellings;
 			sourceTree = "<group>";
 		};
@@ -512,6 +525,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Retellings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,6 +556,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Retellings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
