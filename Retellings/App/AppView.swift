@@ -12,6 +12,8 @@ import SwiftUI
 struct AppView: View {
     @Bindable var store: StoreOf<AppReducer>
 
+    @State private var tabBarHeight: CGFloat = .zero
+
     var body: some View {
         ZStack {
             switch store.state.status {
@@ -31,19 +33,26 @@ struct AppView: View {
                     ListeningView(store: store.scopes.listeningSummary)
                         .toolbar(.hidden, for: .tabBar)
                         .tag(RetellingTab.listening)
+                        .safeAreaInset(edge: .bottom) {
+                            Spacer()
+                                .frame(height: tabBarHeight)
+                        }
 
                     ReadingView(store: store.scopes.readingSummary)
                         .toolbar(.hidden, for: .tabBar)
                         .tag(RetellingTab.overview)
+                        .safeAreaInset(edge: .bottom) {
+                            Spacer()
+                                .frame(height: tabBarHeight)
+                        }
                 }
+                // With .page style even worse.
                 .safeAreaInset(edge: .bottom) {
                     CustomTabBar(
                         tabs: RetellingTab.allCases,
                         selection: $store.tab
                     )
-                }
-                .onAppear {
-                    send(.onAppear)
+                    .read(height: $tabBarHeight)
                 }
             }
         }
