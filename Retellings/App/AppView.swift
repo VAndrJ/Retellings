@@ -16,7 +16,7 @@ struct AppView: View {
 
     var body: some View {
         ZStack {
-            switch store.state.status {
+            switch store.status {
             case .idle:
                 LargeProgressView()
                     .onAppear {
@@ -29,7 +29,7 @@ struct AppView: View {
                     send(.tryAgain)
                 }
             case .data:
-                TabView(selection: $store.state.tab) {
+                TabView(selection: $store.tab) {
                     ListeningView(store: store.scopes.listeningSummary)
                         .toolbar(.hidden, for: .tabBar)
                         .tag(RetellingTab.listening)

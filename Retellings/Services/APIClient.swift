@@ -11,7 +11,7 @@ import Foundation
 @DependencyClient
 struct APIClient {
     var fetchSummary: @Sendable () async throws -> BookSummary
-    var fetchAudiosList: @Sendable () async throws -> [String]
+    var fetchAudiosList: @Sendable (String) async throws -> KeyPoints
 
     struct Failure: Error, Equatable {}
 }
@@ -24,7 +24,10 @@ extension DependencyValues {
 }
 
 extension APIClient: TestDependencyKey {
-    static let testValue = Self(fetchSummary: { .test }, fetchAudiosList: { [] })
+    static let testValue = Self(
+        fetchSummary: { .test },
+        fetchAudiosList: { _ in .test }
+    )
 }
 
 extension APIClient: DependencyKey {
@@ -40,11 +43,14 @@ extension APIClient: DependencyKey {
                 throw Failure()
             }
         },
-        fetchAudiosList: {
+        fetchAudiosList: { id in
             try? await Task.sleep(for: .seconds(2))
 
-            if Bool.random() {
-                return ["1", "2", "3", "4"]
+            if Bool.random(),
+                let url = Bundle.main.url(forResource: id, withExtension: "json"),
+                let data = try? Data(contentsOf: url),
+                let points = try? JSONDecoder().decode(KeyPoints.self, from: data) {
+                return points
             } else {
                 throw Failure()
             }

@@ -14,7 +14,7 @@ final class SpeedControlViewSnapshotTests: XCTestCase {
 
     func test_speedControlView_DefaultState() {
         assertSnapshotWithDifferentUserInterfaceStyles(
-            of: SpeedControlView(speed: .constant(1)).padding().embeddedForSnapshot
+            of: SpeedControlView(speed: 1) { _ in }.padding().embeddedForSnapshot
         )
     }
 

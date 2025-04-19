@@ -11,10 +11,12 @@ import ComposableArchitecture
 @Composer
 struct ListeningReducer {
     struct State: Equatable {
+        @CasePathable
+        @dynamicMemberLookup
         enum Status: Equatable {
             case idle
             case loading
-            case data(String)
+            case data(KeyPoints)
             case loadingFailed(MyAwesomeError)
         }
 
@@ -22,26 +24,35 @@ struct ListeningReducer {
         var status: Status = .idle
         var isPlaying = false
         var keyPoint = 0
-        var total = 2
+        var speed: Float = 1.0
 
+        var currentKeyPoint: Int { min(total, keyPoint + 1) }
+        var total: Int { status.data.map(\.points)?.count ?? 0 }
+        var currentTitle: String { status.data.map(\.points)?.element(at: keyPoint)?.title ?? "No title" }
         var isPreviousAvailable: Bool { keyPoint > 0 }
         var isNextAvailable: Bool { keyPoint < total - 1 }
     }
 
     enum Actions: Equatable {
         enum View: Equatable {
-            case onAppear
             case previous
             case next
             case seekBackward
             case seekForward
             case playPause
+            case tryLoadAgain
+            case updateSpeed(Float)
         }
 
         enum Effect: Equatable {
             case updateSummary(String)
             case fetchData(String)
+            case fetchDataResult(TaskResult<KeyPoints>)
         }
+    }
+
+    private enum CancelToken {
+        case loading
     }
 
     @Dependency(\.apiClient.fetchAudiosList)
@@ -50,7 +61,10 @@ struct ListeningReducer {
     @ComposeBodyActionCase
     func view(state: inout State, action: Actions.View) -> EffectOf<Self> {
         switch action {
-        case .onAppear:
+        case let .updateSpeed(speed):
+            print(speed)
+            state.speed = speed
+
             return .none
         case .previous:
             assertionFailure("implement")
@@ -72,6 +86,15 @@ struct ListeningReducer {
             assertionFailure("implement")
 
             return .none
+        case .tryLoadAgain:
+            if let id = state.currentSummary {
+                return .run { send in
+                    await send(.effect(.fetchData(id)))
+                }
+            } else {
+                assertionFailure("check")
+                return .none
+            }
         }
     }
 
@@ -86,7 +109,19 @@ struct ListeningReducer {
                 await send(.effect(.fetchData(id)))
             }
         case let .fetchData(id):
-            assertionFailure("implement")
+            state.status = .loading
+
+            return .run { send in
+                return await send(.effect(.fetchDataResult(TaskResult { try await fetchAudiosList(id) })))
+            }
+            .cancellable(id: CancelToken.loading, cancelInFlight: true)
+        case let .fetchDataResult(.success(data)):
+            state.status = .data(data)
+
+            return .none
+        case .fetchDataResult(.failure):
+            state.status = .loadingFailed(.audioListLoadingFailed)
+
             return .none
         }
     }

@@ -42,7 +42,7 @@ struct AppReducer {
         }
     }
 
-    enum CancelToken {
+    private enum CancelToken {
         case loading
     }
 
@@ -92,7 +92,7 @@ struct AppReducer {
             state.readingSummary.status = .data(data.about)
 
             return .run { send in
-                await send(.listeningSummary(.effect(.updateSummary(data.id))))
+                await send(.listeningSummary(.effect(.updateSummary(data.data))))
             }
         case .fetchDataResult(.failure):
             // TODO: - Error mapping, or direct usage.

@@ -45,7 +45,7 @@ struct RetellingsAppTests {
                 fetchSummary: {
                     throw APIClient.Failure()
                 },
-                fetchAudiosList: { [] }
+                fetchAudiosList: { _ in .test }
             )
         }
 
@@ -70,7 +70,7 @@ struct RetellingsAppTests {
         } withDependencies: { dependency in
             dependency.apiClient = .init(
                 fetchSummary: { expected },
-                fetchAudiosList: { [] }
+                fetchAudiosList: { _ in .test }
             )
         }
 

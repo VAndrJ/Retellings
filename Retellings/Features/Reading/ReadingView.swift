@@ -14,7 +14,7 @@ struct ReadingView: View {
 
     var body: some View {
         ScrollView {
-            switch store.state.status {
+            switch store.status {
             case .idle:
                 LargeProgressView()
             case let .data(text):

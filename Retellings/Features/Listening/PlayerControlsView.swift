@@ -17,11 +17,11 @@ struct PlayerControlsView: View {
             PlayerControlButton(control: .previous) {
                 send(.previous)
             }
-            .disabled(!store.state.isPreviousAvailable)
+            .disabled(!store.isPreviousAvailable)
             PlayerControlButton(control: .seekBackward) {
                 send(.seekBackward)
             }
-            PlayerControlButton(control: store.state.isPlaying ? .pause : .play) {
+            PlayerControlButton(control: store.isPlaying ? .pause : .play) {
                 send(.playPause)
             }
             PlayerControlButton(control: .seekForward) {
@@ -30,7 +30,7 @@ struct PlayerControlsView: View {
             PlayerControlButton(control: .next) {
                 send(.next)
             }
-            .disabled(!store.state.isNextAvailable)
+            .disabled(!store.isNextAvailable)
         }
     }
 }
