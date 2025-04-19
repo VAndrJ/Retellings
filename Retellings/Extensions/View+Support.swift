@@ -22,7 +22,10 @@ extension View {
     }
 
     @inlinable
-    nonisolated public func clampingDynamicTypeSize() -> some View {
-        dynamicTypeSize(.medium ... .xxxLarge)
+    nonisolated public func clampingDynamicTypeSize(
+        lowerBound: DynamicTypeSize = .medium,
+        upperBound: DynamicTypeSize = .xxxLarge
+    ) -> some View {
+        dynamicTypeSize(lowerBound...upperBound)
     }
 }

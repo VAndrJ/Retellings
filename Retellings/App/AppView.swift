@@ -22,11 +22,8 @@ struct AppView: View {
         case .loading:
             LargeProgressView()
         case let .loadingFailed(error):
-            VStack {
-                Text("Loading failed: \(error.localizedDescription)")
-                Button("Try again") {
-                    send(.tryAgain)
-                }
+            AppErrorView(error: error) {
+                send(.tryAgain)
             }
         case .data:
             TabView(selection: $store.state.tab) {
