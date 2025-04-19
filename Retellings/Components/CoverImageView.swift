@@ -14,12 +14,9 @@ struct CoverImageView: View {
         AsyncImage(url: url) { phase in
             if let image = phase.image {
                 image
-                    .resizable()
-                    .scaledToFill()
+                    .framedAspectRatio(contentMode: .fill)
             } else if phase.error != nil {
-                Image(.placeholderSmallNormal)
-                    .resizable()
-                    .scaledToFill()
+                Image(.placeholderSmallNormal).framedAspectRatio(contentMode: .fill)
             } else {
                 LargeProgressView()
             }
