@@ -15,7 +15,7 @@ struct RetellingsApp: App {
             AppView(
                 store: Store(
                     initialState: AppReducer.State(
-                        listeningSummary: .init(),
+                        listeningSummary: .init(player: .init()),
                         readingSummary: .init()
                     )
                 ) {

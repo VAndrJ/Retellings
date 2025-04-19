@@ -4,6 +4,7 @@ excluded:
   - ${PWD}/DerivedData
 
 disabled_rules:
+  - cyclomatic_complexity
   - trailing_comma
   - force_unwrapping
   - vertical_whitespace_opening_braces

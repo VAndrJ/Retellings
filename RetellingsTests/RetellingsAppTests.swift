@@ -16,7 +16,7 @@ struct RetellingsAppTests {
     func tabSelection_ChangesAppState() async {
         let store = await TestStore(
             initialState: AppReducer.State(
-                listeningSummary: .init(),
+                listeningSummary: .init(player: .init()),
                 readingSummary: .init()
             )
         ) {
@@ -35,7 +35,7 @@ struct RetellingsAppTests {
     func dataLoad_Failure_ChangesAppState() async {
         let store = await TestStore(
             initialState: AppReducer.State(
-                listeningSummary: .init(),
+                listeningSummary: .init(player: .init()),
                 readingSummary: .init()
             )
         ) {
@@ -62,7 +62,7 @@ struct RetellingsAppTests {
         let expected = BookSummary.test
         let store = await TestStore(
             initialState: AppReducer.State(
-                listeningSummary: .init(),
+                listeningSummary: .init(player: .init()),
                 readingSummary: .init()
             )
         ) {

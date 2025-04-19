@@ -107,7 +107,7 @@ struct SpeedControlView: View {
         .task(id: debounceId) {
             guard isDragging, dragValue != speed else { return }
 
-            try? await Task.sleep(for: .milliseconds(300))
+            try? await Task.sleep(for: .milliseconds(50))
             guard !Task.isCancelled else { return }
 
             onSeek(dragValue)

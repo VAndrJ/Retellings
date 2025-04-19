@@ -5,6 +5,7 @@
 //  Created by VAndrJ on 4/19/25.
 //
 
+import AVFoundation
 import ComposableArchitecture
 import SwiftUI
 
@@ -12,6 +13,7 @@ import SwiftUI
 struct AppView: View {
     @Bindable var store: StoreOf<AppReducer>
 
+    @Environment(\.scenePhase) private var scenePhase
     @State private var tabBarHeight: CGFloat = .zero
 
     var body: some View {
@@ -58,6 +60,16 @@ struct AppView: View {
         }
         .transition(.opacity)
         .animation(.easeInOut, value: store.status)
+        .onChange(of: scenePhase) { _, newValue in
+            if newValue == .active {
+                // TODO: - Proper setup
+                let session = AVAudioSession.sharedInstance()
+                if session.category != .playback {
+                    try? session.setCategory(.playback, mode: .spokenAudio)
+                    try? session.setActive(true)
+                }
+            }
+        }
     }
 }
 
@@ -65,7 +77,7 @@ struct AppView: View {
     AppView(
         store: Store(
             initialState: AppReducer.State(
-                listeningSummary: .init(),
+                listeningSummary: .init(player: .init()),
                 readingSummary: .init()
             )
         ) {

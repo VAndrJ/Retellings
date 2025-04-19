@@ -30,11 +30,12 @@ struct ListeningView: View {
                     .padding(.bottom, 4)
                 ChapterDescriptionView(text: store.currentTitle)
                     .padding(.bottom, 8)
-                TimeControlView(currentTime: store.currentTime, duration: store.duration) {
-                    send(.seek(to: $0))
+                // TODO: - Pass player?
+                TimeControlView(currentTime: store.player.currentTime, duration: store.player.duration) {
+                    send(.seek(toTime: $0))
                 }
-                SpeedControlView(speed: store.speed) {
-                    send(.updateSpeed($0))
+                SpeedControlView(speed: store.player.rate) {
+                    send(.updateRate($0))
                 }
                 .padding(.bottom, 16)
                 PlayerControlsView(store: store)
@@ -47,7 +48,7 @@ struct ListeningView: View {
 }
 
 #Preview {
-    ListeningView(store: Store(initialState: ListeningReducer.State(status: .data(.test))) {
+    ListeningView(store: Store(initialState: ListeningReducer.State(status: .data(.test), player: .init())) {
         ListeningReducer()
     })
 }

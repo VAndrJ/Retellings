@@ -21,7 +21,7 @@ struct PlayerControlsView: View {
             PlayerControlButton(control: .seekBackward) {
                 send(.seekBackward)
             }
-            PlayerControlButton(control: store.isPlaying ? .pause : .play) {
+            PlayerControlButton(control: store.player.isPlaying ? .pause : .play) {
                 send(.playPause)
             }
             PlayerControlButton(control: .seekForward) {
@@ -36,7 +36,7 @@ struct PlayerControlsView: View {
 }
 
 #Preview {
-    PlayerControlsView(store: Store(initialState: .init()) {
+    PlayerControlsView(store: Store(initialState: .init(player: .init())) {
         ListeningReducer()
     })
 }

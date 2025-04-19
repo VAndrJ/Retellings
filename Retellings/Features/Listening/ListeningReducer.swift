@@ -5,9 +5,14 @@
 //  Created by VAndrJ on 4/19/25.
 //
 
-import TCAComposer
 import ComposableArchitecture
+import TCAComposer
 
+@ComposeReducer(
+    children: [
+        .reducer("player", of: PlayerReducer.self)
+    ]
+)
 @Composer
 struct ListeningReducer {
     struct State: Equatable {
@@ -22,15 +27,21 @@ struct ListeningReducer {
 
         var currentSummary: String?
         var status: Status = .idle
-        var isPlaying = false
         var keyPoint = 0
-        var speed: Float = 1.0
-        var currentTime: Double = 0
-        var duration: Double = 0
 
         var currentKeyPoint: Int { min(total, keyPoint + 1) }
-        var total: Int { status.data.map(\.points)?.count ?? 0 }
-        var currentTitle: String { status.data.map(\.points)?.element(at: keyPoint)?.title ?? "No title" }
+        var total: Int {
+            switch status {
+            case let .data(points): points.points.count
+            default: 0
+            }
+        }
+        var currentTitle: String {
+            switch status {
+            case let .data(points): points.points.element(at: keyPoint)?.title ?? "No title"
+            default: ""
+            }
+        }
         var isPreviousAvailable: Bool { keyPoint > 0 }
         var isNextAvailable: Bool { keyPoint < total - 1 }
     }
@@ -43,8 +54,8 @@ struct ListeningReducer {
             case seekForward
             case playPause
             case tryLoadAgain
-            case updateSpeed(Float)
-            case seek(to: Double)
+            case updateRate(Float)
+            case seek(toTime: Double)
         }
 
         enum Effect: Equatable {
@@ -65,34 +76,45 @@ struct ListeningReducer {
     func view(state: inout State, action: Actions.View) -> EffectOf<Self> {
         switch action {
         case let .seek(toTime):
-            state.currentTime = toTime
-
-            return .none
-        case let .updateSpeed(speed):
-            print(speed)
-            state.speed = speed
-
-            return .none
+            return .run { send in
+                await send(.player(.view(.seek(toTime: toTime))))
+            }
+        case let .updateRate(speed):
+            return .run { send in
+                await send(.player(.view(.updateRate(speed))))
+            }
         case .previous:
-            assertionFailure("implement")
-
-            return .none
+            if state.isPreviousAvailable,
+                let url = state.status.data?.points.element(at: state.keyPoint - 1)?.url {
+                state.keyPoint -= 1
+                return .run { send in
+                    await send(.player(.effect(.load(url))))
+                }
+            } else {
+                return .none
+            }
         case .next:
-            assertionFailure("implement")
-
-            return .none
+            if state.isNextAvailable,
+                let url = state.status.data?.points.element(at: state.keyPoint + 1)?.url {
+                state.keyPoint += 1
+                return .run { send in
+                    await send(.player(.effect(.load(url))))
+                }
+            } else {
+                return .none
+            }
         case .seekBackward:
-            assertionFailure("implement")
-
-            return .none
+            return .run { send in
+                await send(.player(.view(.seekBackward)))
+            }
         case .seekForward:
-            assertionFailure("implement")
-
-            return .none
+            return .run { send in
+                await send(.player(.view(.seekForward)))
+            }
         case .playPause:
-            assertionFailure("implement")
-
-            return .none
+            return .run { send in
+                await send(.player(.view(.playPause)))
+            }
         case .tryLoadAgain:
             if let id = state.currentSummary {
                 return .run { send in
@@ -100,6 +122,7 @@ struct ListeningReducer {
                 }
             } else {
                 assertionFailure("check")
+
                 return .none
             }
         }
@@ -123,9 +146,16 @@ struct ListeningReducer {
             }
             .cancellable(id: CancelToken.loading, cancelInFlight: true)
         case let .fetchDataResult(.success(data)):
+            state.keyPoint = 0
             state.status = .data(data)
 
-            return .none
+            if let url = state.status.data?.points.element(at: state.keyPoint)?.url {
+                return .run { send in
+                    await send(.player(.effect(.load(url))))
+                }
+            } else {
+                return .none
+            }
         case .fetchDataResult(.failure):
             state.status = .loadingFailed(.audioListLoadingFailed)
 
