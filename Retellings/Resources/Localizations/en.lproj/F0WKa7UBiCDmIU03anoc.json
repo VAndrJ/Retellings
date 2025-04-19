@@ -1,0 +1,21 @@
+{
+    "url": "https://static.headway-academy.com/courses/art/cover.png",
+    "points": [
+        {
+            "title": "Point 1",
+            "audio": "audio1.mp3"
+        },
+        {
+            "title": "Point 2",
+            "audio": "audio2.mp3"
+        },
+        {
+            "title": "Point 3",
+            "audio": "audio3.mp3"
+        },
+        {
+            "title": "Point 4",
+            "audio": "audio4.mp3"
+        }
+    ]
+}

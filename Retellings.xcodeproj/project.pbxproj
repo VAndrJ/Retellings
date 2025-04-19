@@ -6,14 +6,79 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = A31AB93B2DB37E1F00650867 /* RswiftLibrary */; };
+		A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5502DB2D351005F7E3E /* TCAComposer */; };
+		A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = A35DC5992DB2E23B005F7E3E /* SnapshotTesting */; };
+		A3DB6DE32DB3907500002A05 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A3DB6DE22DB3907500002A05 /* ComposableArchitecture */; };
+		A3DB70F42DB3FBA300002A05 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A3DB70F32DB3FBA300002A05 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A35DC55C2DB2D41C005F7E3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35DC52D2DB2D2A6005F7E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A35DC5342DB2D2A6005F7E3E;
+			remoteInfo = Retellings;
+		};
+		A35DC56A2DB2D443005F7E3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35DC52D2DB2D2A6005F7E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A35DC5342DB2D2A6005F7E3E;
+			remoteInfo = Retellings;
+		};
+		A35DC5792DB2D452005F7E3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A35DC52D2DB2D2A6005F7E3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A35DC5342DB2D2A6005F7E3E;
+			remoteInfo = Retellings;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A35DC5352DB2D2A6005F7E3E /* Retellings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Retellings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35DC5582DB2D41C005F7E3E /* RetellingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35DC5662DB2D443005F7E3E /* RetellingsSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35DC5732DB2D452005F7E3E /* RetellingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RetellingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35DC5BB2DB2E4DB005F7E3E /* Retellings.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Retellings.xctestplan; sourceTree = "<group>"; };
+		A3DB70F32DB3FBA300002A05 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A31AB8FD2DB3797600650867 /* Exceptions for "Retellings" folder in "Retellings" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A35DC5372DB2D2A6005F7E3E /* Retellings */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A31AB8FD2DB3797600650867 /* Exceptions for "Retellings" folder in "Retellings" target */,
+			);
 			path = Retellings;
+			sourceTree = "<group>";
+		};
+		A35DC5592DB2D41C005F7E3E /* RetellingsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RetellingsTests;
+			sourceTree = "<group>";
+		};
+		A35DC5672DB2D443005F7E3E /* RetellingsSnapshotTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RetellingsSnapshotTests;
+			sourceTree = "<group>";
+		};
+		A35DC5742DB2D452005F7E3E /* RetellingsUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = RetellingsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,16 +88,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35DC5512DB2D351005F7E3E /* TCAComposer in Frameworks */,
+				A31AB93C2DB37E1F00650867 /* RswiftLibrary in Frameworks */,
+				A3DB6DE32DB3907500002A05 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5552DB2D41C005F7E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5632DB2D443005F7E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A35DC59A2DB2E23B005F7E3E /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5702DB2D452005F7E3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31ABA2A2DB38C0800650867 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A35DC52C2DB2D2A6005F7E3E = {
 			isa = PBXGroup;
 			children = (
+				A3DB70F32DB3FBA300002A05 /* README.md */,
+				A35DC5BB2DB2E4DB005F7E3E /* Retellings.xctestplan */,
 				A35DC5372DB2D2A6005F7E3E /* Retellings */,
+				A35DC5592DB2D41C005F7E3E /* RetellingsTests */,
+				A35DC5672DB2D443005F7E3E /* RetellingsSnapshotTests */,
+				A35DC5742DB2D452005F7E3E /* RetellingsUITests */,
+				A31ABA2A2DB38C0800650867 /* Frameworks */,
 				A35DC5362DB2D2A6005F7E3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				A35DC5352DB2D2A6005F7E3E /* Retellings.app */,
+				A35DC5582DB2D41C005F7E3E /* RetellingsTests.xctest */,
+				A35DC5662DB2D443005F7E3E /* RetellingsSnapshotTests.xctest */,
+				A35DC5732DB2D452005F7E3E /* RetellingsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A35DC5432DB2D2A8005F7E3E /* Build configuration list for PBXNativeTarget "Retellings" */;
 			buildPhases = (
+				A35DC5532DB2D391005F7E3E /* SwiftLint */,
 				A35DC5312DB2D2A6005F7E3E /* Sources */,
 				A35DC5322DB2D2A6005F7E3E /* Frameworks */,
 				A35DC5332DB2D2A6005F7E3E /* Resources */,
@@ -59,16 +166,91 @@
 			buildRules = (
 			);
 			dependencies = (
+				A31AB93E2DB37E3400650867 /* PBXTargetDependency */,
+				A35DC57F2DB2D48E005F7E3E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A35DC5372DB2D2A6005F7E3E /* Retellings */,
 			);
 			name = Retellings;
 			packageProductDependencies = (
+				A35DC5502DB2D351005F7E3E /* TCAComposer */,
+				A31AB93B2DB37E1F00650867 /* RswiftLibrary */,
+				A3DB6DE22DB3907500002A05 /* ComposableArchitecture */,
 			);
 			productName = Retellings;
 			productReference = A35DC5352DB2D2A6005F7E3E /* Retellings.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A35DC5572DB2D41C005F7E3E /* RetellingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A35DC55E2DB2D41C005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsTests" */;
+			buildPhases = (
+				A35DC5542DB2D41C005F7E3E /* Sources */,
+				A35DC5552DB2D41C005F7E3E /* Frameworks */,
+				A35DC5562DB2D41C005F7E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A35DC55D2DB2D41C005F7E3E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A35DC5592DB2D41C005F7E3E /* RetellingsTests */,
+			);
+			name = RetellingsTests;
+			packageProductDependencies = (
+			);
+			productName = RetellingsTests;
+			productReference = A35DC5582DB2D41C005F7E3E /* RetellingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A35DC5652DB2D443005F7E3E /* RetellingsSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A35DC56C2DB2D443005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsSnapshotTests" */;
+			buildPhases = (
+				A35DC5622DB2D443005F7E3E /* Sources */,
+				A35DC5632DB2D443005F7E3E /* Frameworks */,
+				A35DC5642DB2D443005F7E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A35DC56B2DB2D443005F7E3E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A35DC5672DB2D443005F7E3E /* RetellingsSnapshotTests */,
+			);
+			name = RetellingsSnapshotTests;
+			packageProductDependencies = (
+				A35DC5992DB2E23B005F7E3E /* SnapshotTesting */,
+			);
+			productName = RetellingsSnapshotTests;
+			productReference = A35DC5662DB2D443005F7E3E /* RetellingsSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A35DC5722DB2D452005F7E3E /* RetellingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A35DC57B2DB2D452005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsUITests" */;
+			buildPhases = (
+				A35DC56F2DB2D452005F7E3E /* Sources */,
+				A35DC5702DB2D452005F7E3E /* Frameworks */,
+				A35DC5712DB2D452005F7E3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A35DC57A2DB2D452005F7E3E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A35DC5742DB2D452005F7E3E /* RetellingsUITests */,
+			);
+			name = RetellingsUITests;
+			packageProductDependencies = (
+			);
+			productName = RetellingsUITests;
+			productReference = A35DC5732DB2D452005F7E3E /* RetellingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +265,18 @@
 					A35DC5342DB2D2A6005F7E3E = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					A35DC5572DB2D41C005F7E3E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A35DC5342DB2D2A6005F7E3E;
+					};
+					A35DC5652DB2D443005F7E3E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A35DC5342DB2D2A6005F7E3E;
+					};
+					A35DC5722DB2D452005F7E3E = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A35DC5342DB2D2A6005F7E3E;
+					};
 				};
 			};
 			buildConfigurationList = A35DC5302DB2D2A6005F7E3E /* Build configuration list for PBXProject "Retellings" */;
@@ -91,15 +285,26 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A35DC52C2DB2D2A6005F7E3E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */,
+				A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */,
+				A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A35DC5362DB2D2A6005F7E3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A35DC5342DB2D2A6005F7E3E /* Retellings */,
+				A35DC5572DB2D41C005F7E3E /* RetellingsTests */,
+				A35DC5652DB2D443005F7E3E /* RetellingsSnapshotTests */,
+				A35DC5722DB2D452005F7E3E /* RetellingsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -109,10 +314,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DB70F42DB3FBA300002A05 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5562DB2D41C005F7E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5642DB2D443005F7E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5712DB2D452005F7E3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A35DC5532DB2D391005F7E3E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A35DC5312DB2D2A6005F7E3E /* Sources */ = {
@@ -122,7 +371,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A35DC5542DB2D41C005F7E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC5622DB2D443005F7E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A35DC56F2DB2D452005F7E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A31AB93E2DB37E3400650867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A31AB93D2DB37E3400650867 /* RswiftGenerateInternalResources */;
+		};
+		A35DC55D2DB2D41C005F7E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
+			targetProxy = A35DC55C2DB2D41C005F7E3E /* PBXContainerItemProxy */;
+		};
+		A35DC56B2DB2D443005F7E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
+			targetProxy = A35DC56A2DB2D443005F7E3E /* PBXContainerItemProxy */;
+		};
+		A35DC57A2DB2D452005F7E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A35DC5342DB2D2A6005F7E3E /* Retellings */;
+			targetProxy = A35DC5792DB2D452005F7E3E /* PBXContainerItemProxy */;
+		};
+		A35DC57F2DB2D48E005F7E3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A35DC57E2DB2D48E005F7E3E /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A35DC5412DB2D2A8005F7E3E /* Debug */ = {
@@ -130,6 +426,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -193,6 +490,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -252,13 +550,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Retellings/Preview Content\"";
+				DEVELOPMENT_TEAM = 7YRZDEQNDT;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Retellings/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -267,7 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.Retellings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -280,13 +582,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Retellings/Preview Content\"";
+				DEVELOPMENT_TEAM = 7YRZDEQNDT;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Retellings/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,8 +601,108 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.Retellings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A35DC55F2DB2D41C005F7E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
+			};
+			name = Debug;
+		};
+		A35DC5602DB2D41C005F7E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
+			};
+			name = Release;
+		};
+		A35DC56D2DB2D443005F7E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
+			};
+			name = Debug;
+		};
+		A35DC56E2DB2D443005F7E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Retellings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Retellings";
+			};
+			name = Release;
+		};
+		A35DC57C2DB2D452005F7E3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Retellings;
+			};
+			name = Debug;
+		};
+		A35DC57D2DB2D452005F7E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.RetellingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Retellings;
 			};
 			name = Release;
 		};
@@ -321,7 +727,110 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A35DC55E2DB2D41C005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A35DC55F2DB2D41C005F7E3E /* Debug */,
+				A35DC5602DB2D41C005F7E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A35DC56C2DB2D443005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A35DC56D2DB2D443005F7E3E /* Debug */,
+				A35DC56E2DB2D443005F7E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A35DC57B2DB2D452005F7E3E /* Build configuration list for PBXNativeTarget "RetellingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A35DC57C2DB2D452005F7E3E /* Debug */,
+				A35DC57D2DB2D452005F7E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
+		A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mentalflux/tca-composer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+		A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.59.1;
+			};
+		};
+		A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.3;
+			};
+		};
+		A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A31AB93B2DB37E1F00650867 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		A31AB93D2DB37E3400650867 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AB93A2DB37E1F00650867 /* XCRemoteSwiftPackageReference "R" */;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		A35DC5502DB2D351005F7E3E /* TCAComposer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A35DC54F2DB2D351005F7E3E /* XCRemoteSwiftPackageReference "tca-composer" */;
+			productName = TCAComposer;
+		};
+		A35DC57E2DB2D48E005F7E3E /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A35DC5522DB2D36A005F7E3E /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		A35DC5992DB2E23B005F7E3E /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A35DC5982DB2E23B005F7E3E /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		A3DB6DE22DB3907500002A05 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3DB6DE12DB3907500002A05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A35DC52D2DB2D2A6005F7E3E /* Project object */;
 }
