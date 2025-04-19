@@ -13,7 +13,8 @@ struct ChapterDescriptionView: View {
     var body: some View {
         Text(text)
             .multilineTextAlignment(.center)
-            .foregroundColor(.primary)
+            .foregroundStyle(.primary)
+            .lineLimit(2)
             .dynamicFont(.inter, size: 16)
             .clampingDynamicTypeSize()
     }
