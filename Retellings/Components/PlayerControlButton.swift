@@ -23,7 +23,8 @@ struct PlayerControlButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: control.rawValue)
-                .frame(same: 44)
+                .dynamicFont(.inter, size: 24)
+                .frame(same: 48)
         }
         .clipShape(.circle)
         .contentShape(.circle)
